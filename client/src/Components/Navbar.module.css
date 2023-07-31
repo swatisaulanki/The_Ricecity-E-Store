@@ -1,0 +1,54 @@
+.maincontainer{
+    display: flex;
+    /* border: 2px solid red; */
+    padding: 4px 4px;
+    justify-content: space-around;
+    background-size: cover;
+    background-color: rgb(219, 231, 248);
+    /* position: sticky; */
+    top: 0;
+    width: 100vw;
+    position: fixed;
+}
+.icondiv{
+    display: flex;
+}
+.icondiv img{
+    height: 90px;
+}
+.icondiv h2{
+    margin-left: 20px;
+    
+}
+.inputsearchdiv input{
+    height:33px;
+    margin-top:5%;
+    width: 25vw;
+}
+
+
+/* select */
+
+.selectlangdiv{
+margin-top: 28px;
+
+}
+.selectlangdiv select{
+    height: 38px;
+    border: none;
+      border-radius: 5px;
+}
+
+.btndownloaddiv button{
+    margin-top: 30px;
+    height: 40px;
+    width:8vw;
+    border-radius: 10px;
+    font-size: 18px;
+    border: none;
+    color: white;
+    background-color: rgb(186, 186, 194);
+}
+
+
+
