@@ -1,94 +1,162 @@
-import React from 'react'
-import styles from "./Navbar.module.css";
-import  ricecityIcon from "../Components/ricecitylogo.png";
-import "./Search.css"
+import React, { useState } from "react";
+import {
+  Box,
+  HStack,
+  Image,
+  Input,
+  Text,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  IconButton,
+  Heading,
+
+} from "@chakra-ui/react";
+import { AiOutlineUser } from "react-icons/ai";
+import { FiSearch } from "react-icons/fi";
+import { MdCancel } from "react-icons/md";
+// import { Link } from "react-router-dom";
+import Draver from "./Drawer";
+import { HamburgerIcon } from "@chakra-ui/icons";
+
 const Navbar = () => {
+  const [search, setSearch] = useState("none");
+  const [cancel, setCancel] = useState(false);
+
+  const handleSearch = () => {
+    setSearch("block");
+    setCancel(!cancel);
+  };
   return (
     <>
-      <div className={styles.maincontainer}>
-         <div className={styles.icondiv}>
-            <img src={ricecityIcon}/>
-            <div>
-            <h2>Ricecity E-Store</h2>
-         </div>
-         </div>
-        
-
-         {/* <div className={styles.inputsearchdiv}>
-            <input type="text" placeholder='Search...'/>
-         </div> */}
-
-
-
-         <div className="search">
-      <form>
-        <input
-        
-          type="text"
-          placeholder="Search for products..."
-        />
-
-        <button type="submit">
-          <svg
-            stroke="currentColor"
-            fill="currentColor"
-            stroke-width="0"
-            viewBox="0 0 24 24"
-            color="white"
-            font-size="30px"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-            style={{ color: "white" }}
+      <Box w={"100%"} position={"sticky"} top={0} zIndex={1} bg={"white"}>
+        <HStack
+          // border={"1px solid red"}
+          height={"100px"}
+          justifyContent={"space-around"}
+          // borderBottom={"1px solid black"}
+          w={"100%"}
+          bg={"#e7e7e7"}
+        >
+          {/* left side logo */}
+          <Box
+            // w={"250px"}
+            // border={"1px solid green"}
+            cursor={"pointer"}
+            display={["none", "none", "flex", "flex"]}
+            alignItems="center"
           >
-            <path d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z"></path>
-          </svg>
-        </button>
-     
-      </form>
-      
-    </div>
-         <div className="maindivcart">
-         <button className="cart">
-            <svg
-              stroke="currentColor"
-              fill="currentColor"
-              stroke-width="0"
-              viewBox="0 0 16 16"
-              font-size="25px"
-              height="1em"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
+            <Image src="./Images/ricecitylogo.png" alt="logo" height="100px" />
+            <Heading color="">Ricecity <span style={{color:"#E22D4A"}}>E-Store</span> </Heading>
+          </Box>
+          <Menu>
+            <MenuButton
+              as={IconButton}
+              aria-label="Options"
+              icon={<HamburgerIcon />}
+              variant="outline"
+              display={["block", "block", "none", "none"]}
+            />
+            <MenuList>
+              <MenuItem>HOME</MenuItem>
+              <MenuItem>SALE</MenuItem>
+              {/* <Link to={"/"}><MenuItem>SHOP</MenuItem></Link> */}
+              <MenuItem>Contact-US</MenuItem>
+            </MenuList>
+          </Menu>
+
+          {/* middle  components */}
+          <Box
+            // border={"1px solid green"}
+            fontWeight={600}
+            cursor={"pointer"}
+            display={["none", "none", "block", "block"]}
+          >
+            <HStack justifyContent={"space-around"} gap={"40px"} color={"#616466"} fontSize={"20px"}>
+              <Text>HOME</Text>
+
+              <Text>SALE</Text>
+
+              <Text>SHOP</Text>
+
+              <Text>CONTACT US</Text>
+            </HStack>
+          </Box>
+          <Box
+            w={["210px", "210px", "200px", "250px"]}
+            // border={"1px solid green"}
+            cursor={"pointer"}
+            display={["block", "block", "none", "none"]}
+          >
+            <Image
+              src="./Images/ricecitylogo.png"
+              alt="logo"
+              w={"100px"}
+              m="auto"
+            />
+          </Box>
+
+          {/* right login cart buttons */}
+          <Box
+            //  border={"1px solid green"}
+            fontWeight={600}
+            cursor={"pointer"}
+          >
+            <HStack
+              justifyContent={"space-around"}
+              gap={["15px", "15px", "10px", "20px"]}
             >
-              <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"></path>
-            </svg>
-          </button>
-          <div className={styles.selectlangdiv}>
-            <select>
-                <option>Select Language</option>
-                <option>English</option>
-                <option>Hindi</option>
-                <option>Marathi</option>
-
-            </select>
-         </div>
-         <div>
-            <div>1</div>
-            <div>2</div>
-         </div>
-         </div>
-       
-<div className={styles.btndownloaddiv}>
-    <button>Download</button>
-</div>
-
-         
-
-
-        
-      </div>
+              <Box display={["none", "none", "block", "block"]}>
+                <AiOutlineUser style={{ height: "35px", width: "35px" }} />
+                {/* <Avatar src='https://bit.ly/broken-link' /> */}
+              </Box>
+              <Box onClick={handleSearch}>
+                {cancel ? (
+                  <MdCancel style={{ height: "25px", width: "25px" }} />
+                ) : (
+                  <FiSearch style={{ height: "35px", width: "35px" }} />
+                )}
+              </Box>
+              <HStack>
+                <Box
+                  position={"relative"}
+                  border={"1px solid #E22D4A"}
+                  marginLeft={"25px"}
+                  marginTop={"-25px"}
+                  w={"20px"}
+                  h={"25px"}
+                  color={"white"}
+                  backgroundColor={"#E22D4A"}
+                  borderRadius={"50%"}
+                >
+                  0
+                </Box>
+                <Box position={"absolute"}>
+                  <Draver />
+                </Box>
+              </HStack>
+            </HStack>
+          </Box>
+        </HStack>
+        <Box display={cancel ? search : "none"}>
+          <HStack
+            borderBottom={"1px solid grey"}
+            h={"60px"}
+            w={["100%", "100%", "50%", "40%"]}
+            m={"auto"}
+          >
+            <Input
+              placeholder="Search Keywords...."
+              border={"0px solid white"}
+              focusBorderColor="white"
+            />
+            <FiSearch style={{ height: "55px", width: "55px",backgroundColor:"#818A91",color:"white"}} />
+          </HStack>
+        </Box>
+      </Box>
     </>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
