@@ -11,7 +11,7 @@ import {
 } from "@chakra-ui/react";
 // import { ReactNode } from 'react'
 
-const ListHeader = ({ children }: {}) => {
+const ListHeader = ({ children }) => {
   return (
     <Text fontWeight={"500"} fontSize={"lg"} mb={2}>
       {children}
