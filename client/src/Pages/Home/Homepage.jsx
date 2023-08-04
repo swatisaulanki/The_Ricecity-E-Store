@@ -1,18 +1,6 @@
 import React from "react";
-import {
-  Card,
-  SimpleGrid,
-  CardBody,
-  Text,
-  CardHeader,
-  Button,
-  Heading,
-  CardFooter,
-  Flex,
-  Box,
-} from "@chakra-ui/react";
 import Slider from "react-slick";
-import { IconButton, useBreakpointValue, Image } from "@chakra-ui/react";
+import { IconButton, useBreakpointValue, Image, Box } from "@chakra-ui/react";
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
 
 // Settings for the slider

@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import {
   Box,
@@ -11,15 +10,14 @@ import {
   MenuList,
   MenuItem,
   IconButton,
-  Heading
-
+  Heading,
 } from "@chakra-ui/react";
 import { AiOutlineUser } from "react-icons/ai";
 import { FiSearch } from "react-icons/fi";
 import { MdCancel } from "react-icons/md";
-// import { Link } from "react-router-dom";
 import Draver from "./Drawer";
 import { HamburgerIcon } from "@chakra-ui/icons";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [search, setSearch] = useState("none");
@@ -41,16 +39,24 @@ const Navbar = () => {
           bg={"#e7e7e7"}
         >
           {/* left side logo */}
-          <Box
-            // w={"250px"}
-            // border={"1px solid green"}
-            cursor={"pointer"}
-            display={["none", "none", "flex", "flex"]}
-            alignItems="center"
-          >
-            <Image src="./Images/ricecitylogo.png" alt="logo" height="100px" />
-            <Heading color="">Ricecity <span style={{color:"#E22D4A"}}>E-Store</span> </Heading>
-          </Box>
+          <Link to={"/"}>
+            <Box
+              // w={"250px"}
+              // border={"1px solid green"}
+              cursor={"pointer"}
+              display={["none", "none", "flex", "flex"]}
+              alignItems="center"
+            >
+              <Image
+                src="./Images/ricecitylogo.png"
+                alt="logo"
+                height="100px"
+              />
+              <Heading color="">
+                Ricecity <span style={{ color: "#E22D4A" }}>E-Store</span>{" "}
+              </Heading>
+            </Box>
+          </Link>
           <Menu>
             <MenuButton
               as={IconButton}
@@ -60,10 +66,11 @@ const Navbar = () => {
               display={["block", "block", "none", "none"]}
             />
             <MenuList>
-              <MenuItem>HOME</MenuItem>
-              <MenuItem>SALE</MenuItem>
-              {/* <Link to={"/"}><MenuItem>SHOP</MenuItem></Link> */}
+              <MenuItem>STORE</MenuItem>
+              <MenuItem>LOGIN</MenuItem>
               <MenuItem>Contact-US</MenuItem>
+              <MenuItem>ABOUT</MenuItem>
+              <MenuItem>POLICIES</MenuItem>
             </MenuList>
           </Menu>
 
@@ -74,14 +81,27 @@ const Navbar = () => {
             cursor={"pointer"}
             display={["none", "none", "block", "block"]}
           >
-            <HStack justifyContent={"space-around"} gap={"40px"} color={"#616466"} fontSize={"20px"}>
-              <Text>HOME</Text>
+            <HStack
+              justifyContent={"space-around"}
+              gap={"40px"}
+              color={"#5E6061"}
+              fontSize={"20px"}
+            >
+              <Link to="/store">
+                <Text>STORE</Text>
+              </Link>
 
-              <Text>SALE</Text>
+              <Link to={"/contactus"}>
+                <Text>CONTACT-US</Text>
+              </Link>
 
-              <Text>SHOP</Text>
+              <Link to={"/about"}>
+                <Text>ABOUT</Text>
+              </Link>
 
-              <Text>CONTACT US</Text>
+              <Link to={"/policies"}>
+                <Text>POLICIES</Text>
+              </Link>
             </HStack>
           </Box>
           <Box
@@ -108,10 +128,13 @@ const Navbar = () => {
               justifyContent={"space-around"}
               gap={["15px", "15px", "10px", "20px"]}
             >
-              <Box display={["none", "none", "block", "block"]}>
-                <AiOutlineUser style={{ height: "35px", width: "35px" }} />
-                {/* <Avatar src='https://bit.ly/broken-link' /> */}
-              </Box>
+              <Link to={"/login"}>
+                {" "}
+                <Box display={["none", "none", "block", "block"]}>
+                  <AiOutlineUser style={{ height: "35px", width: "35px" }} />
+                  {/* <Avatar src='https://bit.ly/broken-link' /> */}
+                </Box>
+              </Link>
               <Box onClick={handleSearch}>
                 {cancel ? (
                   <MdCancel style={{ height: "25px", width: "25px" }} />
@@ -152,7 +175,14 @@ const Navbar = () => {
               border={"0px solid white"}
               focusBorderColor="white"
             />
-            <FiSearch style={{ height: "55px", width: "55px",backgroundColor:"#818A91",color:"white"}} />
+            <FiSearch
+              style={{
+                height: "55px",
+                width: "55px",
+                backgroundColor: "#818A91",
+                color: "white",
+              }}
+            />
           </HStack>
         </Box>
       </Box>
