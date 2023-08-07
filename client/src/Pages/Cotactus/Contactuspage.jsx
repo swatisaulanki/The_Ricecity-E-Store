@@ -3,7 +3,7 @@ import React from "react";
 
 const Contactuspage = () => {
   return (
-    <HStack gap={"40px"} m={"auto"} color={"#333333"} p={"20px"} pt={"40px"} flexDirection={["column","column","column","row"]}>
+    <HStack gap={"40px"} w={"90%"} m={"auto"} color={"#333333"} p={"20px"} pt={"40px"} flexDirection={["column","column","column","row"]}>
       <Stack textAlign={"left"} w={["100%","100%","100%","70%"]}>
         <Text fontSize={"34px"} fontWeight={"600"} >Questions, Comments? You tell us. We listen.</Text>
         <Text lineHeight={10}>Email: <span style={{fontWeight:"700"}} >vaibhav@ricecity.in</span> </Text>
