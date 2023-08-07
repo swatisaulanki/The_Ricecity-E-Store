@@ -1,11 +1,11 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-// import { useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import styles from "./Cartpage.module.css";
 const Cartpage = () => {
   const [data, setData] = useState([]);
-  // const [cart, setCart] = useState([]);
-  // const { id } = useParams();
+  const [cart, setCart] = useState([]);
+  const { id } = useParams();
 
   console.log(data);
   const GetData = () => {
@@ -37,26 +37,25 @@ const Cartpage = () => {
   }, []);
 
   return (
-    <div>
+    <div style={{display:"grid" ,gridTemplateColumns: "repeat(4,1fr)", gap:"20px"}}>
       {data.length > 0 &&
         data.map((item) => {
           return (
             <div className={styles.Cartcontainstwo}>
               <div className={styles.imgcont}>
-                {/* <img src={item.imageURL2} /> */}
+                <img src={item.imageURL2} />
 
                 <h1>{item.title}</h1>
               </div>
 
-              <div>
+              <div className={styles.Cartname}>
                 <p>{item.name}</p>
 
                 <p>{item.price}</p>
               </div>
 
-              <div>
-                <button> Qty </button>
-                <button onClick={handleDelete}>Delete</button>
+              <div className={styles.btncart}>
+                <button> Add to Cart </button>
               </div>
             </div>
           );
