@@ -66,11 +66,11 @@ const Navbar = () => {
               display={["block", "block", "none", "none"]}
             />
             <MenuList>
-              <MenuItem>STORE</MenuItem>
-              <MenuItem>LOGIN</MenuItem>
-              <MenuItem>Contact-US</MenuItem>
-              <MenuItem>ABOUT</MenuItem>
-              <MenuItem>POLICIES</MenuItem>
+              <Link to="/store"><MenuItem>STORE</MenuItem></Link>
+              <Link to="/login"><MenuItem>LOGIN</MenuItem></Link>
+              <Link to="/contactus"><MenuItem>Contact-US</MenuItem></Link>
+              <Link to="/about"><MenuItem>ABOUT</MenuItem></Link>
+              <Link to="/policies"><MenuItem>POLICIES</MenuItem></Link>
             </MenuList>
           </Menu>
 
