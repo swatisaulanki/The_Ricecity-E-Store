@@ -1,8 +1,9 @@
 import React from "react";
 import Slider from "react-slick";
-import { IconButton, useBreakpointValue, Image, Box } from "@chakra-ui/react";
+import { IconButton, useBreakpointValue, Image, Box, Button } from "@chakra-ui/react";
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
 import Cartpage from "../Cart/Cartpage";
+import { Link } from "react-router-dom";
 
 // Settings for the slider
 const settings = {
@@ -104,6 +105,9 @@ const Homepage = () => {
         </Slider>
       </Box>
 
+      <Cartpage/>
+
+      <Link to={"/store"}><Button backgroundColor={"#5cb85c"} borderRadius={"0px"} fontWeight={600} fontSize={"20px"} p={"30px"}>Load More</Button></Link>
       {/* <SimpleGrid
         spacing={8}
         templateColumns="repeat(auto-fill, minmax(250px, 1fr))"
@@ -158,7 +162,7 @@ const Homepage = () => {
         </Card>
       </SimpleGrid> */}
 
-      <Cartpage/>
+      
     </div>
   );
 };
