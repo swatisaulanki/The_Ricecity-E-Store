@@ -2,9 +2,8 @@ import React from "react";
 import Slider from "react-slick";
 import { IconButton, useBreakpointValue, Image, Box } from "@chakra-ui/react";
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
-import Cartpage from "../Cart/Cartpage";
 
-// Settings for the slider
+// Settings for the sliderr
 const settings = {
   dots: true,
   arrows: false,
@@ -158,7 +157,11 @@ const Homepage = () => {
         </Card>
       </SimpleGrid> */}
 
-      <Cartpage/>
+
+
+
+
+
     </div>
   );
 };
