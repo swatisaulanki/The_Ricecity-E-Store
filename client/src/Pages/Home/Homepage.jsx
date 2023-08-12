@@ -68,7 +68,7 @@ const Homepage = () => {
     <div>
       <Box
         position={"relative"}
-        height={"600px"}
+        height={["auto","auto","auto","600px"]}
         width={"full"}
         overflow={"hidden"}
         mt={"10px"}
@@ -117,7 +117,8 @@ const Homepage = () => {
             <Box
               key={index}
               w={"full"}
-              height={"600px"}
+              border={"1px solid black"}
+              height={["auto","auto","auto","600px"]}
               position="relative"
               backgroundPosition="center"
               backgroundRepeat="no-repeat"
