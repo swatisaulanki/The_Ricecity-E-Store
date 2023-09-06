@@ -52,6 +52,9 @@ const Homepage = () => {
 
   const images = [
     {
+      imageUrl: "https://i.ytimg.com/vi/UGcA1Qch2R8/maxresdefault.jpg",
+    },
+    {
       imageUrl: "./Images/logo3.png",
     },
     {
@@ -117,7 +120,7 @@ const Homepage = () => {
             <Box
               key={index}
               w={"full"}
-              border={"1px solid black"}
+              // border={"1px solid black"}
               height={["auto","auto","auto","600px"]}
               position="relative"
               backgroundPosition="center"
@@ -150,7 +153,7 @@ const Homepage = () => {
           {products.map((e) => (
             <GridItem height={"300px"} boxShadow="rgba(0, 0, 0, 0.16) 0px 1px 4px">
               {/* <Link to={`/singlesale/${e.id}`}> */}
-                <Box
+              <Link to={`/singleproduct/${e.id}`}><Box
                   key={e.id}
                   _hover={{ backgroundSize: "120%" }}
                   position="relative"
@@ -169,7 +172,7 @@ const Homepage = () => {
                   <Box backgroundColor={"#a4e1f4"} fontWeight={500} color={"#E22D4A"} w={"50%"} mt={"175px"}>₹{e.pricecashback}</Box>
                 </Box>
                 
-              {/* </Link> */}
+              </Link>
               <Box px={"5px"}>
                 <Text noOfLines={1}>{e.name}</Text>
                 <HStack m={"auto"} justifyContent={"space-around"} color={"#E22D4A"}><Text fontWeight={500}><span style={{color:"#E22D4A"}}>₹</span> {e.price}</Text><Button _hover={{ backgroundColor: "#bbd9c1" }} backgroundColor={"#bbd9c1 "} onClick={handleCart} >Add To Cart</Button></HStack>
