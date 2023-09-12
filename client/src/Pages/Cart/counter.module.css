@@ -1,0 +1,74 @@
+
+.ProductContainerTwo{
+    display: flex;
+    justify-content: space-around;
+    font-size: 22px;
+    border: 0px solid red;
+    width: 106%;
+}
+.Productimg p{
+  margin-left: 210%;
+}
+
+.imageContainer img{
+    height: 200px;
+    margin-left: 90%;
+
+}
+.CounterF{
+    border: 1px solid rgb(53, 51, 51);
+    display: flex;
+    gap: 17px;
+    width: 10%;
+    height: 51px;
+    
+}
+.plus{
+    margin-top: 2%;
+    
+}
+.plus button{
+    height: 15px;
+    border: none;
+ background-color:white;
+
+    
+}
+.minus{
+    margin-top: 2%;
+    
+}
+.minus button {
+    height: 20px;
+    border: none;
+    background-color:white;
+
+
+}
+.CountSec h1{
+   margin-top:-1%;
+}
+.Delete{
+    width: 20%;
+    border: 0px solid red;
+    margin-left:10% ;
+    margin-top: 10%;
+}
+
+
+.ProductContainer{
+    border:0px solid red;
+}
+
+.counterContainer{
+    border:0px solid blue;
+    display: flex;
+    justify-content: space-around;
+
+}
+.TotalContainer{
+    border:0px solid rgb(0, 255, 115);
+    display: flex;
+    width: 97.4%;
+    justify-content: space-around;
+}
