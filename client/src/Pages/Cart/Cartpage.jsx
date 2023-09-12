@@ -44,6 +44,7 @@ const CartPage = () => {
 
   // const decCount = () => {
   //   setCount(count - 1);
+  
   // };
   return (
     <>
