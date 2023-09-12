@@ -33,6 +33,7 @@ const CartPage = () => {
     console.log(id);
     axios.delete(`http://localhost:8000/Cart/${id}`)
     .then(() => {
+      console.log("cart")
       getCart();
     })
   }
